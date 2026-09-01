@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Sharon Aurelio Studio — brand and narrative strategy for firms whose capability has outrun their story.">
+<title>Sharon Aurelio Studio — Brand & Narrative Strategy</title>
+<link rel="stylesheet" href="css/style.css">
+<script>
+/* Opening-sequence gate: decide BEFORE paint whether the intro should run,
+   so there is never a flash of the wrong state. No JS / reduced-motion / already
+   seen this session => class is never added => overlay stays hidden (CSS default)
+   and the homepage is what renders. */
+(function(){
+  try{
+    var seen = sessionStorage.getItem('sasIntroSeen');
+    var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(!seen && !reduced){
+      document.documentElement.classList.add('show-intro');
+    }
+    if(seen || reduced){
+      sessionStorage.setItem('sasIntroSeen','1');
+    }
+  }catch(e){ /* sessionStorage unavailable: fall through, intro simply won't show */ }
+})();
+</script>
+</head>
+<body>
+
+<div class="intro" id="intro" aria-hidden="true">
+  <p class="intro-statement">Your work is better than<br><span class="accent">the story you're telling about it.</span></p>
+</div>
+
+<header class="container nav">
+  <a class="logo" href="#top">Sharon Aurelio<span>Studio</span></a>
+  <nav class="navlinks" id="navlinks">
+    <a href="#method">Method</a>
+    <a href="#services">Services</a>
+    <a href="#proof">Proof</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobilenav" type="button">Menu</button>
+</header>
+
+<nav class="mobilenav" id="mobilenav" aria-label="Mobile">
+  <a href="#method">Method</a>
+  <a href="#services">Services</a>
+  <a href="#proof">Proof</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<main id="top">
+
+<section class="container hero">
+  <div>
+    <div class="kicker">Brand &amp; Narrative Strategy / AEC + Beyond</div>
+    <h1>Your capability has <em>outrun</em> your story.</h1>
+    <div class="hero-meta">
+      <p>I surface the value already inside complex organizations,<br>build the narrative around it, and put it to work.</p>
+      <div class="scroll"><span></span>Scroll to see what happens next</div>
+    </div>
+  </div>
+  <div class="kicker">Born in AEC. Built to travel.</div>
+</section>
+
+<section class="image-break">
+  <div class="container">
+    <figure>
+      <img src="images/amparo-mexico-city.jpg" alt="Museo Amparo, Puebla, Puebla — photograph by Sharon Aurelio" width="2048" height="1360" loading="lazy">
+      <div class="image-label">Museo Amparo / Puebla, Puebla / Photograph by Sharon Aurelio</div>
+    </figure>
+    <div class="image-caption">
+      <div>Seeing is part of the work.</div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container split">
+    <div class="kicker">The problem</div>
+    <div>
+      <h2>Undersold capability.<br>Undersold <em>expertise.</em></h2>
+      <p class="lede" style="margin-top:55px">You may not need a better story. You may need the story that already exists inside your capabilities.</p>
+      <p class="micro" style="margin-top:28px">Complex organizations evolve. Their capabilities change, their markets expand, acquisitions reshape them, and new expertise gets absorbed into the whole. The narrative often lags behind.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section dark" id="method">
+  <div class="container">
+    <div class="split">
+      <div class="kicker">The method</div>
+      <div>
+        <h2>The Undersold<br><em>Method</em></h2>
+        <p class="lede" style="margin-top:50px">A three-phase approach to surfacing what is already valuable, building the narrative around it, and giving that narrative somewhere to go.</p>
+      </div>
+    </div>
+    <div class="method-grid">
+      <article class="method">
+        <div class="method-no">01 / SITE READ</div>
+        <h3>See what is actually there.</h3>
+        <p>Understand the work, capability, ambition, market context, and the value that has become invisible from the inside.</p>
+        <div class="method-word">See / Surface / Distill</div>
+      </article>
+      <article class="method">
+        <div class="method-no">02 / NARRATIVE BUILD</div>
+        <h3>Find what is worth saying.</h3>
+        <p>Translate complexity into strategic positioning and narrative without sanding away what makes the work yours.</p>
+        <div class="method-word">Reframe / Connect / Position</div>
+      </article>
+      <article class="method">
+        <div class="method-no">03 / ACTIVATION</div>
+        <h3>Give the story somewhere<br>to go.</h3>
+        <p>Put it to work across pursuits, awards, business development, thought leadership, M&amp;A, market expansion, and growth.</p>
+        <div class="method-word">Activate / Elevate / Expand</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section outcomes">
+  <div class="container">
+    <div class="split">
+      <div class="kicker">The outcome</div>
+      <div>
+        <h2>Recognition is the <em>result.</em></h2>
+        <p class="lede" style="margin-top:50px">Not communication for its own sake. Recognition from clients, juries, partners, acquisition targets, markets, decision-makers, and international audiences.</p>
+      </div>
+    </div>
+    <div class="outcome-row">
+      <div class="outcome"><div class="num">01</div><h3>Recognition</h3><p>Make the value of the work legible to the people whose perception matters.</p></div>
+      <div class="outcome"><div class="num">02</div><h3>Positioning</h3><p>Move the firm from what it does to why that capability matters.</p></div>
+      <div class="outcome"><div class="num">03</div><h3>Opportunity</h3><p>Connect narrative to pursuits, relationships, visibility, growth, and new markets.</p></div>
+      <div class="outcome"><div class="num">04</div><h3>Wins</h3><p>Because the point is not to tell a prettier story. It is to change what happens next.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section services" id="services">
+  <div class="container split">
+    <div class="kicker">What I do</div>
+    <div>
+      <h2>Positioning that makes capability <em>visible.</em></h2>
+      <p class="lede" style="margin-top:50px">I am not here to tell a better story for its own sake.<br>I am here to change how the market understands the firm.</p>
+    </div>
+  </div>
+  <div class="container service-list">
+    <article class="service">
+      <div class="num">01</div>
+      <h3>Brand &amp; Narrative Strategy</h3>
+      <div><p>Positioning, narrative architecture, brand integration, M&amp;A integration, and the strategic systems that make complex capability legible.</p></div>
+    </article>
+    <article class="service">
+      <div class="num">02</div>
+      <h3>Recognition &amp; Visibility Strategy</h3>
+      <div><p>Awards, submissions, thought leadership, conference narratives, and recognition systems built to reinforce credibility and market authority.</p></div>
+    </article>
+    <article class="service">
+      <div class="num">03</div>
+      <h3>Pursuit Strategy</h3>
+      <div><p>Competitive-selection narratives that connect technical approach, differentiators, and client priorities into a clear reason to choose you.</p></div>
+    </article>
+  </div>
+</section>
+
+<section class="section proof" id="proof">
+  <div class="container">
+    <div class="split">
+      <div class="kicker">The proof</div>
+      <div>
+        <h2>I bring proof, not <em>promises.</em></h2>
+        <p class="lede" style="margin-top:50px">The numbers speak for themselves.</p>
+      </div>
+    </div>
+    <div class="proof-grid">
+      <div class="stat"><strong>87%</strong><span>Successful design award submission rate</span><small>195 submissions over 14 years</small></div>
+      <div class="stat"><strong>$4M</strong><span>New revenue generated</span><small>First quarter of Hospitality practice launch</small></div>
+      <div class="stat"><strong>$72M</strong><span>Opportunity pipeline</span><small>Four targeted client engagement activations</small></div>
+      <div class="stat"><strong>$50M</strong><span>Net revenue growth</span><small>Year over year</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="section about" id="about">
+  <div class="container">
+    <div class="split">
+      <div class="kicker">About Sharon</div>
+      <div><h2>An architect who became a <em>strategist.</em></h2></div>
+    </div>
+
+    <div class="about-intro">
+      <div><h3>I know both sides of the table.</h3></div>
+      <div class="about-copy">
+        <p>I'm an architect who became a brand and narrative strategist, not a marketer who learned to speak architecture.</p>
+        <p>I've spent my career inside design practices, working alongside architects, engineers, and other technical experts. I understand the complexity of the work, the ambition behind it, and the very real difficulty of stepping outside it long enough to explain why it matters.</p>
+        <p><strong>So we don't start by judging the story. We start by understanding the work.</strong></p>
+        <p>Then we find what's worth saying, build the narrative around it, and make sure it survives contact with the real world.</p>
+        <div class="quote">The goal isn't to make your work sound like marketing. It's to make the value of the work impossible to miss.</div>
+      </div>
+    </div>
+
+    <div class="experience">
+      <h3 class="kicker" style="padding:22px 0">Experience across</h3>
+      <div class="exp-grid">
+        <div class="exp-block"><h4>Architecture &amp; Design</h4><p>Architecture · Interior Design · Planning &amp; Urban Design · Sustainability · Data-Driven Design · Parametric Design · Industrial Design · Graphic Design · Signage &amp; Wayfinding · Environmental Graphic Design</p></div>
+        <div class="exp-block"><h4>Engineering &amp; Infrastructure</h4><p>MEPFP · Civil Engineering · MODex · Infrastructure · Technical Systems</p></div>
+        <div class="exp-block"><h4>Markets</h4><p>Mixed-Use · Hospitality · Multifamily · Retail · Themed Entertainment · Maritime · Aviation · Higher Education · Civic · Cultural · Municipal · Federal · Healthcare · Mission Critical · Workplace</p></div>
+        <div class="exp-block"><h4>Selected client experience</h4><p>NASA · Amazon · Oracle · Majid Al Futtaim · Brookfield Properties · Grupo Carso · JLL · Marriott International · St. Regis · Grupo Habita · Simon Property Group · Mitsui Fudosan · AEG Europe · New York Public Library</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section statement">
+  <div class="container">
+    <div class="kicker">The bigger picture</div>
+    <h2 style="margin-top:45px">Born in AEC.<br>Built to <em>travel.</em></h2>
+    <div class="sub">Architecture · Engineering · Infrastructure · Placemaking · M&amp;A · International Markets</div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container contact-grid">
+    <div>
+      <div class="kicker">Start a conversation</div>
+      <h2 style="margin-top:35px">Let's make<br>it <em>seen.</em></h2>
+    </div>
+    <div class="contact-side">
+      <p>You know the work. I know how to make it understood.</p>
+      <p>For firms whose capability has outgrown the story that got them here.</p>
+      <a class="cta" href="mailto:hello@sharonaureliostudio.com">Get in touch ↗</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div><strong>Sharon Aurelio Studio</strong><br>Brand &amp; Narrative Strategy</div>
+      <div>Chicago / Mexico City / Everywhere the method travels</div>
+      <div><a href="mailto:hello@sharonaureliostudio.com">hello@sharonaureliostudio.com</a></div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Sharon Aurelio Studio. All rights reserved.</div>
+      <div>The Undersold Method℠ is proprietary intellectual property of Sharon Aurelio Studio.</div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js" defer></script>
+</body>
+</html>
