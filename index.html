@@ -6,6 +6,27 @@
 <meta name="description" content="Sharon Aurelio Studio — brand and narrative strategy for firms whose capability has outrun their story.">
 <title>Sharon Aurelio Studio — Brand & Narrative Strategy</title>
 <link rel="stylesheet" href="css/style.css">
+
+<!-- ===== TEMPORARY PASSWORD GATE — delete this whole block (style + div + script) to restore public access ===== -->
+<style>
+html.pw-locked body>*:not(#pwgate){display:none}
+#pwgate{display:none;position:fixed;inset:0;z-index:9999;background:#fff;color:#090909;align-items:center;justify-content:center;font-family:Arial,Helvetica,sans-serif}
+html.pw-locked #pwgate{display:flex}
+#pwgate form{text-align:center;padding:24px}
+#pwgate input{font-size:16px;padding:12px 14px;border:1px solid #171717;min-width:220px}
+#pwgate button{font-size:14px;font-weight:700;padding:12px 18px;margin-left:8px;background:#090909;color:#fff;border:0;cursor:pointer}
+#pwgate p{font-size:12px;color:#c0392b;margin-top:12px;min-height:16px}
+</style>
+<script>
+(function(){
+  try{
+    if(sessionStorage.getItem('sasGateOK') === '1') return;
+  }catch(e){}
+  document.documentElement.classList.add('pw-locked');
+})();
+</script>
+<!-- ===== END TEMPORARY PASSWORD GATE (style/script part 1 of 3) ===== -->
+
 <script>
 /* Opening-sequence gate: decide BEFORE paint whether the intro should run,
    so there is never a flash of the wrong state. No JS / reduced-motion / already
@@ -26,6 +47,33 @@
 </script>
 </head>
 <body>
+
+<!-- ===== TEMPORARY PASSWORD GATE (part 2 of 3 — the overlay markup) ===== -->
+<div id="pwgate" aria-hidden="true">
+  <form id="pwgateForm">
+    <div style="font-weight:800;font-size:20px;letter-spacing:-.03em;margin-bottom:16px">Sharon Aurelio Studio</div>
+    <input type="password" id="pwgateInput" placeholder="Password" autocomplete="off">
+    <button type="submit">Enter</button>
+    <p id="pwgateError"></p>
+  </form>
+</div>
+<script>
+(function(){
+  var form = document.getElementById('pwgateForm');
+  if(!form) return;
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var val = document.getElementById('pwgateInput').value;
+    if(val === 'Tlalocgodofrain'){
+      try{ sessionStorage.setItem('sasGateOK','1'); }catch(err){}
+      document.documentElement.classList.remove('pw-locked');
+    } else {
+      document.getElementById('pwgateError').textContent = 'Incorrect password.';
+    }
+  });
+})();
+</script>
+<!-- ===== END TEMPORARY PASSWORD GATE (part 2 of 3) ===== -->
 
 <div class="intro" id="intro" aria-hidden="true">
   <p class="intro-statement">Your work is better than<br><span class="accent">the story you're telling about it.</span></p>
