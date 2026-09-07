@@ -12,7 +12,7 @@
   var root = document.documentElement;
 
   if (root.classList.contains('show-intro')) {
-    var HOLD_MS = 1400;      // how long the statement sits before it leaves
+    var HOLD_MS = 2400;      // how long the statement sits before it leaves
     var EXIT_MS = 1350;      // must match the CSS: .35s delay + 1s fade
 
     var holdTimer = null;
@@ -68,4 +68,47 @@
       });
     });
   }
+
+  /* ---------------------------------------------------------------------
+     Cookie consent gate
+     Google Analytics is never loaded until a visitor explicitly accepts.
+     Choice is remembered in localStorage so it isn't asked again.
+     ------------------------------------------------------------------- */
+  var GA_ID = 'G-6YH0THZJN2';
+
+  function loadAnalytics() {
+    if (window.__gaLoaded) return;
+    window.__gaLoaded = true;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+    document.head.appendChild(s);
+    gtag('js', new Date());
+    gtag('config', GA_ID);
+  }
+
+  (function () {
+    var consent = null;
+    try { consent = localStorage.getItem('sasCookieConsent'); } catch (e) {}
+
+    if (consent === 'granted') { loadAnalytics(); return; }
+    if (consent === 'denied') { return; }
+
+    var banner = document.getElementById('cookieBanner');
+    var acceptBtn = document.getElementById('cookieAccept');
+    var declineBtn = document.getElementById('cookieDecline');
+    if (!banner || !acceptBtn || !declineBtn) return;
+
+    banner.hidden = false;
+
+    acceptBtn.addEventListener('click', function () {
+      try { localStorage.setItem('sasCookieConsent', 'granted'); } catch (e) {}
+      banner.hidden = true;
+      loadAnalytics();
+    });
+    declineBtn.addEventListener('click', function () {
+      try { localStorage.setItem('sasCookieConsent', 'denied'); } catch (e) {}
+      banner.hidden = true;
+    });
+  })();
 })();
