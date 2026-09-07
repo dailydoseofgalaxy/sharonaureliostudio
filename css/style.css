@@ -187,6 +187,8 @@ html.intro-exit .intro{
 /* --- About Sharon -------------------------------------------------- */
 .about{padding-bottom:80px}
 .about-intro{margin-top:80px;display:grid;grid-template-columns:1fr 1.5fr;gap:70px}
+.about-photo{margin:0 0 28px;width:min(220px,60%);aspect-ratio:4/5;overflow:hidden}
+.about-photo img{object-position:center 30%}
 .about-intro h3{font-size:clamp(40px,5vw,75px);line-height:.84;letter-spacing:-.07em;margin:-.08em 0 0}
 .about-copy{font-size:18px;max-width:760px}
 .about-copy p{margin:0 0 23px}
