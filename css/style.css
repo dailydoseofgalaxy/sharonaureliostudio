@@ -251,6 +251,10 @@ html.intro-exit .intro{
   .hero h1{font-size:58px}
   .section h2{font-size:52px}
   .image-break figure{height:48vh}
+  /* This break was requested for the wide desktop layout specifically;
+     on narrow phones it forced an uneven-looking gap against the line
+     above, so let the paragraph just reflow naturally here instead. */
+  .hero-lede-break{display:none}
 }
 
 /* --- Cookie consent banner ------------------------------------------------ */
