@@ -265,6 +265,7 @@ html.intro-exit .intro{
   display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;
   border-top:1px solid #333;
 }
+.cookie-banner[hidden]{display:none}
 .cookie-banner p{margin:0;font-size:13px;line-height:1.5;max-width:640px}
 .cookie-banner a{text-decoration:underline}
 .cookie-banner-actions{display:flex;gap:10px;flex-shrink:0}
