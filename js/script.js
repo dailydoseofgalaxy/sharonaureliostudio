@@ -54,17 +54,21 @@
   var mobileNav = document.getElementById('mobilenav');
 
   if (menuToggle && mobileNav) {
+    // Button labels live in data attributes so each language page supplies its own.
+    var openLabel = menuToggle.getAttribute('data-open-label') || 'Menu';
+    var closeLabel = menuToggle.getAttribute('data-close-label') || 'Close';
+
     menuToggle.addEventListener('click', function () {
       var isOpen = mobileNav.classList.toggle('open');
       menuToggle.setAttribute('aria-expanded', String(isOpen));
-      menuToggle.textContent = isOpen ? 'Close' : 'Menu';
+      menuToggle.textContent = isOpen ? closeLabel : openLabel;
     });
 
     mobileNav.querySelectorAll('a').forEach(function (link) {
       link.addEventListener('click', function () {
         mobileNav.classList.remove('open');
         menuToggle.setAttribute('aria-expanded', 'false');
-        menuToggle.textContent = 'Menu';
+        menuToggle.textContent = openLabel;
       });
     });
   }

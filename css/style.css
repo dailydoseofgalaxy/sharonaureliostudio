@@ -42,6 +42,32 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 .navlinks{display:flex;gap:30px;font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase}
 .navlinks a{padding:8px 0;display:inline-block}
 .navlinks a:hover{text-decoration:underline}
+.nav-right{display:flex;align-items:center;gap:30px}
+
+/* Language switcher (globe) — square, hairline, no shadow, like the menu button */
+.lang{position:relative}
+.lang-toggle{
+  display:flex;align-items:center;justify-content:center;
+  width:44px;height:44px;padding:0;
+  background:none;border:1px solid transparent;color:var(--ink);cursor:pointer;
+}
+.lang-toggle:hover{border-color:var(--line)}
+.lang-toggle[aria-expanded="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.lang-toggle svg{width:20px;height:20px;display:block}
+.lang-menu{
+  position:absolute;right:0;top:calc(100% + 8px);z-index:200;
+  margin:0;padding:0;list-style:none;min-width:176px;
+  background:var(--paper);border:1px solid var(--line);
+}
+.lang-menu[hidden]{display:none}
+.lang-menu li+li{border-top:1px solid var(--line)}
+.lang-menu a{
+  display:flex;align-items:center;min-height:44px;padding:0 16px;
+  font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
+}
+.lang-menu a::before{content:"";width:14px;height:1px;margin-right:10px;background:transparent}
+.lang-menu a[aria-current="true"]::before{background:var(--ink)}
+.lang-menu a:hover{background:var(--soft)}
 
 .menu-toggle{
   display:none;
@@ -224,10 +250,15 @@ html.intro-exit .intro{
 .footer-social a:hover{text-decoration:none;opacity:.7}
 .footer-social svg{width:20px;height:20px;display:block}
 
+/* Spanish runs longer than English; step headline size down a notch so the
+   section headlines keep roughly the same number of lines. */
+html[lang="es"] .section:not(.statement) h2{font-size:clamp(44px,5.7vw,92px)}
+
 /* --- Responsive --------------------------------------------------------- */
 @media(max-width:900px){
   .container{width:min(100% - 34px,1400px)}
   .navlinks{display:none}
+  .nav-right{gap:10px}
   .menu-toggle{display:inline-block}
   .mobilenav{display:flex}
   .hero-meta,.split,.about-intro,.contact-grid{grid-template-columns:1fr}
@@ -257,6 +288,9 @@ html.intro-exit .intro{
      on narrow phones it forced an uneven-looking gap against the line
      above, so let the paragraph just reflow naturally here instead. */
   .hero-lede-break{display:none}
+  /* Spanish headlines carry longer single words (reconocimiento,
+     posicionamiento) that overflow the English phone size. */
+  html[lang="es"] .section:not(.statement) h2{font-size:40px}
 }
 
 /* --- Cookie consent banner ------------------------------------------------ */
